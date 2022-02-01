@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="cookies.js"></script>
+</head>
+
+<body onload="checkCookie()">
+
+    <h2>Responsive Checkout Form</h2>
+    <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack
+        on top of each other instead of next to each other.</p>
+    <div class="row">
+        <div class="col-50">
+            <div class="container">
+                <form action="/action_page.php">
+
+                    <div class="row">
+
+
+                        <div class="col-40">
+                            <h3>Payment</h3>
+                            <label for="fname">Accepted Cards</label>
+                            <div class="icon-container">
+                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            </div>
+                            <label for="cname">Name on Card</label>
+                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                </div>
+                                <div class="col-50">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                    </label>
+                    <input type="submit" value="Continue to checkout" class="btn">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-20">
+                <div class="container">
+                    <h4>Service Invoice <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i>
+                            <b>3</b></span></h4>
+                    <p><a href="#">Tyre Repair</a> <span class="price">₹500</span></p>
+                    <p><a href="#">Air filling</a> <span class="price">₹20</span></p>
+                    <p><a href="#">Tow Fee</a> <span class="price">₹8000</span></p>
+                    <hr>
+                    <p>Total <span class="price" style="color:black"><b>₹8520</b></span></p>
+                </div>
+            </div>
+            <div class="col-25">
+                <div class="container">
+                    <h4>Cookie Management <span class="price" style="color:black"><i class="	fa fa-sun-o"></i>
+                            <b>3</b></span></h4>
+                    <a href="#" class="btn green" onclick="checkCookie()">Set/Check Cookie</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#" class="btn red" onclick="deleteCookie()">Delete Name Cookie</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#" class="btn red" onclick="deleteCardNumber()" >Delete Card Number Cookie</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#" class="btn red" onclick="deleteColorCookie()">Delete Background Color Cookie</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#" class="btn orange" onclick="setExpiryCnameCookie()">Set Expiry Date For Name</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#" class="btn orange" onclick="setExpiryCnumCookie()">Set Expiry Date For Card Number</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
