@@ -55,6 +55,11 @@ function checkCookie() {
         }
     }
 
+    let paymentStatus = getCookie("Pstatus")
+    if(paymentStatus)
+    {
+        document.getElementById("status").src="images/2.jpg"
+    }
 
 }
 
@@ -70,6 +75,11 @@ function deleteColorCookie() {
 function deleteCardNumber() {
     document.cookie = "cardnumber=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     alert("CardNumber Cookie Deleted");
+}
+
+function deleteStatus() {
+    document.cookie = "Pstatus=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+    alert("Payment Status Cookie Deleted");
 }
 
 function setExpiryCnameCookie() {
@@ -95,4 +105,11 @@ function setExpiryCnumCookie() {
     }
     setCookie("cardnumber", user, exdate);
 
+}
+var Pstatus = false
+function setStatus()
+{
+    Pstatus = true
+    cname = "Pstatus"
+    document.cookie = cname + "=" + Pstatus + ";"  + ";path=/";
 }
